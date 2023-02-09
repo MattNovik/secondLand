@@ -28,9 +28,8 @@ mixin workProcess()
           ul.work-process__list
             each item,index in workProcessList
               li.work-process__item
-                li.work-process__item
-                  +icon('icon-star', 30,30)
-                  h3.work-process__item-title= item.title
+                +icon('icon-star', 30,30)
+                h3.work-process__item-title= item.title
       .work-process__image-wrapper
         .work-process__inside-wrapper
           +picture('content', 'process', 'png', 320, 486, "process").work-process__image

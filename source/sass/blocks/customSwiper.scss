@@ -126,7 +126,7 @@
     }
 
     @include vp--767 {
-      padding: 0;
+      padding: 0 20px 0 0;
       font-size: 1rem;
       line-height: 150%;
       margin: 0 0 20px;
@@ -157,7 +157,7 @@
       @include vp--767 {
         position: absolute;
         right: 15px;
-        bottom: 60px;
+        bottom: -20px;
       }
     }
   }
@@ -204,15 +204,18 @@
     }
 
     img {
-      width: 240px !important;
-      height: 289px !important;
+      width: 240px;
+      height: 289px;
       position: relative !important;
       border-radius: 10px;
       object-fit: cover;
 
       @include vp--1023 {
-        width: 225px !important;
-        height: 289px !important;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /*  width: 225px !important;
+        height: 289px !important; */
       }
 
       @include vp--767 {
@@ -270,6 +273,7 @@
 
   &__buttons {
     display: flex;
+    flex-direction: row-reverse;
     column-gap: 16px;
     position: absolute;
     top: 40px;
@@ -301,6 +305,7 @@
     box-sizing: border-box;
 
     @include vp--767 {
+      height: 100% !important;
       display: flex;
     }
   }
@@ -339,6 +344,7 @@
 
     @include vp--767 {
       display: flex;
+      justify-content: center;
     }
   }
 
