@@ -1,21 +1,28 @@
 import axios from "axios";
 
 const baseSuccessCallback = (event) => {
+  event.preventDefault();
   const formData = new FormData(event.target);
   axios
     .post(
-      "https://dev.studservis.ru/wp-content/themes/studservice/ajax/createOrder.php",
+      "https://back.studuniverse.ru/api/public/user",
       formData,
-      {
-        auth: {
-          username: "admin",
-          password: "zde3jnm4HTD.gbq@amv",
-        },
-      }
     )
     .then((response) => {
       console.log(response);
       if (typeof response.link !== "undefined" && response.link.length > 0) {
+        return (window.location.href = response.authLink);
+      }
+      if (response.order_id && response.action === "userIsset") {
+        return (window.location.href =
+          "https://dev2.studservis-lk.ru/" +
+          "orders/newOrder/id=" +
+          response.order_id +
+          "/new/");
+      } else {
+        return (window.location.href = "https://dev2.studservis-lk.ru/");
+      }
+      /* if (typeof response.link !== "undefined" && response.link.length > 0) {
         return (window.location.href = response.link);
       }
       if (response.order_id && response.action === "userIsset") {
@@ -26,10 +33,9 @@ const baseSuccessCallback = (event) => {
           "/new/");
       } else {
         return (window.location.href = "https://studservis-lk.ru/");
-      }
+      } */
     })
-    .catch((error) => console.log("error"));
-  event.preventDefault();
+    .catch((error) => console.log(error));
   // В данном колбеке бэкендер, либо разработчик при необходимости будет писать запрос на отправку формы на сервер и обрабатывать возможные ошибки или успешную отправку формы на сервер
 };
 

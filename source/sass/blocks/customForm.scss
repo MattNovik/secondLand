@@ -190,6 +190,10 @@
       color: $dark-text;
       cursor: pointer;
 
+      @include vp--767 {
+        color: $color-default-white;
+      }
+
       & a {
         color: inherit;
         text-underline-offset: 2px;

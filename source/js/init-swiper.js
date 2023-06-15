@@ -6,6 +6,9 @@ const initPhotosSwiper = (slider, loop) => {
     slidesPerView: 1,
     grabCursor: true,
     autoHeight: true,
+    autoplay: {
+      delay: 5000,
+    },
     loop: loop,
     pagination: {
       el: ".swiper-pagination",

@@ -3724,6 +3724,13 @@ input:matches([type=email],
   margin: 0;
 }
 
+.work-process__item svg {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+}
+
 .work-process__item-info-text {
   font-weight: 900;
   font-size: 0.75rem;
@@ -4639,6 +4646,10 @@ input:matches([type=email],
     flex-direction: column;
   }
 
+  .custom-form__input-agreeament + label {
+    color: #ffffff;
+  }
+
   .custom-swiper {
     margin: 0 0 170px;
   }
@@ -4753,7 +4764,7 @@ input:matches([type=email],
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #e8e8f6;
+    background-color: #b3b7bc;
   }
 
   .custom-swiper .swiper-pagination-bullet-active {
