@@ -19,7 +19,7 @@ mixin customForm(options)
           inputName: "email",
           inputPlaceholder: 'ВАШ E-MAIL'
         })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required).custom-form__input
-        input.partnerId(type="hidden" name="labedl_id" value="#LABEL_ID_VALUE#")
+        input.partnerId(type="hidden" name="label_id" value="#LABEL_ID_VALUE#")
         button.custom-form__button(type="submit") Рассчитать
       div(data-validate-type="checkbox" data-required)
         input(name="agreeament" checked=true class='custom-form__input-agreeament visibility-hidden' id=`${options.id ? 'agreeament-' + options.id: 'agreeament'}` type="checkbox" )
